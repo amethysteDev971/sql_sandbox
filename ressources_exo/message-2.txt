@@ -1,0 +1,48 @@
+Voici l'énoncé réécrit en masquant le type de jointure à utiliser :
+
+---
+
+### Exercice : Manipuler les données de commandes dans une base de données
+
+#### Contexte
+Vous gérez une base de données pour un système de suivi des commandes dans un magasin. Vous disposez de deux tables :
+
+- **Customers** : contient la liste des clients du magasin.
+- **Orders** : contient la liste des commandes passées par les clients.
+
+### Structure des tables et données
+
+1. **Customers**
+
+| customer_id | name         |
+|-------------|--------------|
+| 1           | Alice Martin |
+| 2           | Bob Durand   |
+| 3           | Clara Duval  |
+| 4           | David Roger  |
+
+2. **Orders**
+
+| order_id | customer_id | product         | quantity |
+|----------|-------------|-----------------|----------|
+| 101      | 1           | Télévision      | 1        |
+| 102      | 1           | Réfrigérateur   | 2        |
+| 103      | 2           | Lave-vaisselle  | 3        |
+| 104      | 3           | Machine à laver | 1        |
+| 105      | 5           | Micro-onde | 1        |
+
+### Instructions
+
+Écrivez des requêtes SQL pour obtenir les résultats suivants en utilisant des jointures appropriées.
+
+1. **Récupérer la liste des clients ayant commandé une quantité de deux produits ou plus dans au moins une commande.**  
+   Affichez leur nom, l’ID de la commande, le produit, et la quantité.
+
+2. **Récupérer la liste de tous les clients et les commandes qu'ils ont passées, y compris ceux qui n'ont pas passé de commande.**  
+   Affichez leur nom, l’ID de la commande, le produit, et la quantité. Les champs de commande doivent être vides pour les clients sans commande.
+
+3. **Récupérer la liste de toutes les commandes et des clients associés, même si certains clients n'existent plus.**  
+   Affichez l'ID de la commande, le produit, la quantité et le nom du client (si disponible).
+
+4. **Récupérer toutes les combinaisons possibles entre les clients et les produits commandés.**
+Affichez le nom du client, le produit, et la quantité pour chaque combinaison possible.
