@@ -1,9 +1,15 @@
 <?php
 
-    require_once 'Room.php';
-    require_once 'User.php';
-    require_once 'Reservation.php';
-    require_once 'ReservationManager.php';
+    // require_once 'Room.php';
+    // require_once 'User.php';
+    // require_once 'Reservation.php';
+    // require_once 'ReservationManager.php';
+
+    require __DIR__ . '/../vendor/autoload.php';
+use App\reservation_Marc\Room;
+use App\reservation_Marc\User;
+use App\reservation_Marc\ReservationManager;
+use App\reservation_Marc\UserManager;
 
     $salleDeReunion = new Room(
         1,
@@ -79,3 +85,39 @@
 
 //    var_dump($manager);
 //    showList($manager->findAll());
+
+
+//* Test UserManager
+$userManager = new UserManager();
+
+//Utilisation methode findById(int $id)
+echo "<h1>findById(1)</h1>";
+echo "<pre>";
+var_dump($userManager->findById(1));
+echo "</pre>";
+
+echo "<h1>findAll()</h1>";
+echo "<pre>";
+var_dump($userManager->findAll());
+echo "</pre>";
+
+
+$nvxUser = new User(
+    7,
+    "Julien",
+    "Doe",
+    "",
+    "admin",
+    "06706060606",
+    "julien@doe.fr",
+    "1234"
+    ,"active"
+    ,new DateTime(),
+    new DateTime()
+);
+echo "<h1>create(user)</h1>";
+echo "<pre>";
+var_dump($userManager->create($nvxUser));
+echo "</pre>";
+
+
